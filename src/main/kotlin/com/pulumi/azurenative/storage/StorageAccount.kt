@@ -1,13 +1,17 @@
 package com.pulumi.azurenative.storage
 
 import com.pulumi.azurenative.Utilities
+import com.pulumi.azurenative.storage.enums.Kind
+import com.pulumi.azurenative.storage.inputs.SkuArgs
 import com.pulumi.core.Alias
 import com.pulumi.core.Output
 import com.pulumi.core.annotations.Export
+import com.pulumi.core.annotations.Import
 import com.pulumi.core.annotations.ResourceType
 import com.pulumi.core.internal.Codegen
 import com.pulumi.resources.CustomResource
 import com.pulumi.resources.CustomResourceOptions
+import com.pulumi.resources.ResourceArgs
 import javax.annotation.Nullable
 
 @ResourceType(type = "azure-native:storage:StorageAccount")
@@ -22,11 +26,11 @@ class StorageAccount : CustomResource {
 
     constructor(name: String) : this(name, StorageAccountArgs.empty())
 
-    constructor(name: String, args: StorageAccountArgs.T) : this(name, args, null)
+    constructor(name: String, args: StorageAccountArgs) : this(name, args, null)
 
     constructor(
         name: String,
-        args: StorageAccountArgs.T?,
+        args: StorageAccountArgs?,
         @Nullable options: CustomResourceOptions?
     ) :
             super(

@@ -32,10 +32,10 @@ object App2 {
 
         val storageAccount = StorageAccount(
             "sa",
-            StorageAccountArgs.T(
+            StorageAccountArgs(
                 resourceGroupName = resourceGroup.name(),
                 kind = Kind.StorageV2,
-                sku = SkuArgs.T(name = SkuName.Standard_LRS),
+                sku = SkuArgs(name = SkuName.Standard_LRS),
             )
         )
 

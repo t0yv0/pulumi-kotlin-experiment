@@ -48,9 +48,9 @@ public class App {
 
         var storageAccount = new StorageAccount(
                 "sa",
-                StorageAccountArgs.INSTANCE.builder().resourceGroupName(resourceGroup.name())
+                StorageAccountArgs.builder().resourceGroupName(resourceGroup.name())
                         .kind(Kind.StorageV2)
-                        .sku(SkuArgs.INSTANCE.builder().name(SkuName.Standard_LRS).build())
+                        .sku(SkuArgs.build().name(SkuName.Standard_LRS).build())
                         .build());
 
         var storageContainer = new BlobContainer("container",
