@@ -35,7 +35,7 @@ object App2 {
             StorageAccountArgs.T(
                 resourceGroupName = resourceGroup.name(),
                 kind = Kind.StorageV2,
-                sku = SkuArgs.builder().name(SkuName.Standard_LRS).build(),
+                sku = SkuArgs.T(name = SkuName.Standard_LRS),
             )
         )
 

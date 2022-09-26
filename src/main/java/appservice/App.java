@@ -50,7 +50,7 @@ public class App {
                 "sa",
                 StorageAccountArgs.INSTANCE.builder().resourceGroupName(resourceGroup.name())
                         .kind(Kind.StorageV2)
-                        .sku(SkuArgs.builder().name(SkuName.Standard_LRS).build())
+                        .sku(SkuArgs.INSTANCE.builder().name(SkuName.Standard_LRS).build())
                         .build());
 
         var storageContainer = new BlobContainer("container",

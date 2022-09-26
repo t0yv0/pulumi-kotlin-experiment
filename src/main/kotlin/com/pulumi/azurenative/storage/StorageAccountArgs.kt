@@ -18,11 +18,12 @@ object StorageAccountArgs {
         val resourceGroupName: Output<String>,
 
         @Import(name = "sku", required = true)
-        val sku: SkuArgs
+        val sku: SkuArgs.T
     ) : ResourceArgs()
 
     fun builder(): Builder = Builder(empty())
-    fun empty(): T = T(kind = Kind.StorageV2, resourceGroupName = Output.of(""), sku = SkuArgs.Empty)
+
+    fun empty(): T = T(kind = Kind.StorageV2, resourceGroupName = Output.of(""), sku = SkuArgs.builder().build())
 
     class Builder(val t: T) {
         fun kind(newKind: Kind): Builder {
@@ -33,7 +34,7 @@ object StorageAccountArgs {
             return Builder(t.copy(resourceGroupName = name))
         }
 
-        fun sku(newSku: SkuArgs): Builder {
+        fun sku(newSku: SkuArgs.T): Builder {
             return Builder(t.copy(sku = newSku))
         }
 
