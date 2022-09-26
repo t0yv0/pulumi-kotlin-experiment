@@ -41,10 +41,11 @@ object App2 {
 
         val storageContainer = BlobContainer(
             "container",
-            BlobContainerArgs.builder().resourceGroupName(resourceGroup.name())
-                .accountName(storageAccount.name())
-                .publicAccess(PublicAccess.None)
-                .build()
+            BlobContainerArgs(
+                resourceGroupName = resourceGroup.name(),
+                accountName = storageAccount.name(),
+                publicAccess = Output.of(PublicAccess.None),
+            )
         )
 
         val blob = Blob(

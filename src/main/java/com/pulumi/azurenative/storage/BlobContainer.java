@@ -377,7 +377,7 @@ public class BlobContainer extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      */
     public BlobContainer(String name) {
-        this(name, BlobContainerArgs.Empty);
+        this(name, null);
     }
     /**
      *
@@ -394,7 +394,7 @@ public class BlobContainer extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public BlobContainer(String name, BlobContainerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("azure-native:storage:BlobContainer", name, args == null ? BlobContainerArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("azure-native:storage:BlobContainer", name, args, makeResourceOptions(options, Codegen.empty()));
     }
 
     private BlobContainer(String name, Output<String> id, @Nullable com.pulumi.resources.CustomResourceOptions options) {
