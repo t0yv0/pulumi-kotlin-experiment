@@ -46,8 +46,9 @@ public class App {
     private static void stack(Context ctx) {
         var resourceGroup = new ResourceGroup("resourceGroup");
 
-        var storageAccount = new StorageAccount("sa",
-                StorageAccountArgs.builder().resourceGroupName(resourceGroup.name())
+        var storageAccount = new StorageAccount(
+                "sa",
+                StorageAccountArgs.INSTANCE.builder().resourceGroupName(resourceGroup.name())
                         .kind(Kind.StorageV2)
                         .sku(SkuArgs.builder().name(SkuName.Standard_LRS).build())
                         .build());

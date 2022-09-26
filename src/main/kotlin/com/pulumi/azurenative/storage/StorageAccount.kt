@@ -20,18 +20,18 @@ class StorageAccount : CustomResource {
         return this.name!!
     }
 
-    constructor(name: String) : this(name, StorageAccountArgs.Empty)
+    constructor(name: String) : this(name, StorageAccountArgs.empty())
 
-    constructor(name: String, args: StorageAccountArgs) : this(name, args, null)
+    constructor(name: String, args: StorageAccountArgs.T) : this(name, args, null)
 
     constructor(
         name: String,
-        args: StorageAccountArgs?,
+        args: StorageAccountArgs.T?,
         @Nullable options: CustomResourceOptions?
     ) :
             super(
                 "azure-native:storage:StorageAccount", name,
-                args ?: StorageAccountArgs.Empty,
+                args ?: StorageAccountArgs.empty(),
                 makeResourceOptions(options, Codegen.empty())
             )
 
